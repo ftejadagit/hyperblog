@@ -1,0 +1,19 @@
+sudo apt install git
+//cambiar la rama master a main
+git checkout master
+git branch -m main
+
+
+
+GitHub
+// Añadir repositorio remoto
+ssh-keygen -t rsa -b 4096 -C "franztejada@hotmail.com"
+eval $(ssh-agent -s) //verificar que ssh esté corriendo
+ssh-add ~/.ssh/id_rsa //agregar llave al entorno
+// copiar el contenido de id_rsa.pub a las llaves de Github
+git remote add origin git@github.com:ftejadagit/hyperblog.git
+
+
+//traer repositorio remoto por primera vez
+git pull origin main --allow-unrelated-histories
+git push origin main
